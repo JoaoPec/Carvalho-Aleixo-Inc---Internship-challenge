@@ -1,9 +1,17 @@
 # Amazon Product Scraper
 
+## Motivation
+
+It is a challenge to a backend developer internship position at a company.
+
+The task was to create a web application that scrapes Amazon product listings based on a user-provided keyword.
+The application should extract the product title, rating, number of reviews, and product image URL, and display this information on a webpage.
+
 ## Overview
 
-Amazon Product Scraper is a web application that scrapes Amazon product listings from the first page of search results for a given keyword. It extracts the product title, rating, number of reviews, and product image URL, and displays this information on a user-friendly webpage.
-Features
+Amazon Product Scraper is a web application that scrapes Amazon product listings from the first page of search results for a given keyword. It extracts the product title, rating, number of reviews, and product image URL, and displays this information webpage.
+
+### Features
 
 Scrapes Amazon product listings based on a user-provided keyword.
 Extracts and displays product title, rating, number of reviews, and image URL.
@@ -28,9 +36,11 @@ Technologies Used
 
 Frontend
 
-    public/css/styles.css: Contains the CSS for styling the webpage.
-    public/js/main.js: Contains the client-side JavaScript for handling the AJAX request.
-    views/index.ejs: EJS template for the main page.
+- public/css/styles.css: Contains the CSS for styling the webpage.
+
+- public/js/main.js: Contains the client-side JavaScript for handling the AJAX request.
+
+- views/index.ejs: EJS template for the main page.
 
 
 ## Installation

@@ -1,17 +1,20 @@
-const { scrapeAmazon } = require('../services/scrapeService');
+import { scrapeAmazon } from '../services/scrapeService.js';
 
-exports.scrapeAmazonProducts = async (req, res) => {
+// Controller to handle the scraping request
+export const scrapeAmazonProducts = async (req, res) => {
+  const { keyword } = req.query;
 
-    const { keyword } = req.query;
-    if (!keyword) {
-        return res.status(400).json({ error: 'Keyword query parameter is required' });
-    }
+  // Check if the keyword query parameter is provided
+  if (!keyword) {
+    return res.status(400).json({ error: 'Keyword query parameter is required' });
+  }
 
-    try {
-        const products = await scrapeAmazon(keyword);
-        res.json(products);
-    } catch (error) {
-        res.status(500).json({ error: 'Failed to scrape Amazon products' });
-    }
+  try {
+    // Call the scraping service with the provided keyword
+    const products = await scrapeAmazon(keyword);
+    res.json(products);
+  } catch (error) {
+    // Handle any errors that occur during the scraping process
+    res.status(500).json({ error: 'Failed to scrape Amazon products' });
+  }
 };
-

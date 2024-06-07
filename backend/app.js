@@ -1,25 +1,25 @@
-const express = require('express');
-const path = require('path');
-const scrapeRoutes = require('./routes/scrapeRoutes');
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import scrapeRoutes from './routes/scrapeRoutes.js';
 
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// Set EJS as templating engine
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '../frontend/views'));
-
-// Serve static files
+// Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, '../frontend/public')));
 
-// Routes
+// Use the scrape routes for handling API requests
 app.use('/api', scrapeRoutes);
 
-// Serve the main page
+// Serve the main HTML page
 app.get('/', (req, res) => {
-  res.render('index');
+  res.sendFile(path.join(__dirname, '../frontend/views/index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+

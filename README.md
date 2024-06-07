@@ -14,7 +14,9 @@ Amazon Product Scraper is a web application that scrapes Amazon product listings
 ### Features
 
 Scrapes Amazon product listings based on a user-provided keyword.
+
 Extracts and displays product title, rating, number of reviews, and image URL.
+
 Simple, user-friendly frontend interface.
 
 Technologies Used
